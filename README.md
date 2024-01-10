@@ -1,29 +1,37 @@
-# .NET Examples
+# APIGateway with CORS, Lambdas, and CRUD on DynamoDB
+<!--BEGIN STABILITY BANNER-->
 
-![Language-Support: Stable](https://img.shields.io/badge/language--support-stable-success.svg?style=for-the-badge)
+![Stability: Stable](https://img.shields.io/badge/stability-Stable-success.svg?style=for-the-badge)
 
-This section contains all the CDK code examples written in .NET. At the moment, the CDK only supports .NET Core projects. For more information on using the CDK in .NET, please see the [Developer Guide](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-csharp.html).
+> **This is a stable example. It should successfully build out of the box**
+>
+> This examples is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build.
 
-## Running Examples
+---
+<!--END STABILITY BANNER-->
 
-To run a .NET example, execute the following:
+This example deploys API Gateway, integrated with five Lambdas which perform CRUD operations against a DynamoDB table.
 
+## Prerequisites
+* Docker
+* AWS CDK CLI
+
+## Build
+To build this app, you need to be in this example's root folder. Then run the following:
+
+
+```bash
+npm install -g aws-cdk
+cdk synth
 ```
-$ npm install -g aws-cdk
-$ cd csharp/EXAMPLE_DIRECTORY
-$ cdk deploy
+
+## Deploy
+To deploy this app, you need to be in this example's root folder. Then run the following:
+
+
+```bash
+cdk bootstrap
+cdk deploy
 ```
 
-Then, to dispose of the stack afterwards:
-
-```
-$ cdk destroy
-```
-
-## Table of Contents
-
-| Example | Description |
-|---------|-------------|
-| [api-cors-lambda-crud-dynamodb](https://github.com/aws-samples/aws-cdk-examples/tree/master/csharp/api-cors-lambda-crud-dynamodb/) | API Gateway integrated Lambdas which perform CRUD operations against a DynamoDB table. |
-| [my-widget-service](https://github.com/aws-samples/aws-cdk-examples/tree/master/csharp/my-widget-service/) | Use Lambda to serve up widgets |
-| [random-writer](https://github.com/aws-samples/aws-cdk-examples/tree/master/csharp/random-writer/) | This sample application demonstrates some essential mechanisms of the AWS CDK for .NET. It uses AWS Lambda, DynamoDB, CloudWatch. |
+This will deploy / redeploy your Stack to your AWS Account. After the deployment you will see the API's URL, which represents the url you can then use.
